@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ArticlesVC: BaseWireframe {
 
@@ -21,25 +22,44 @@ class ArticlesVC: BaseWireframe {
     }
     
     @IBAction private func periodSegmentedControlTapped(_ sender: UISegmentedControl) {
+        presenter?.setPeriod(periodSegmentedControl.selectedSegmentIndex)
     }
 }
 
 // MARK: - Presenter Delegate
 extension ArticlesVC: ArticlesView {
+    func scrollToTheTop() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        }
+    }
+    
     func showIndicator() {
-        
+        SVProgressHUD.show()
     }
     
     func hideIndicator() {
-        
+        SVProgressHUD.dismiss()
     }
     
     func fetchDataSuccess() {
-        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
     }
     
     func showError(error: String) {
-        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.presentGenericAlert(
+                viewController: self,
+                title: "Error",
+                message: error,
+                doneButtonTitle: "Okay",
+                dismissButtonTitle: nil)
+        }
     }
 }
 
@@ -59,20 +79,19 @@ extension ArticlesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return presenter?.numberOfLeagues() ?? 0
-        0
+        presenter?.numberOfArticles() ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: TableViewConstants.cellIdentifier,
             for: indexPath) as! ArticleCell
-//        presenter?.cellConfiguration(cell, for: indexPath.row)
+        presenter?.cellConfiguration(cell, for: indexPath.row)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        presenter?.didSelectRow(at: indexPath.row)
+        presenter?.didSelectRow(at: indexPath.row)
     }
 }
 

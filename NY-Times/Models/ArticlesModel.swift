@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Articles
-struct Articles: Codable {
+struct ArticlesModel: Codable {
     let status, copyright: String
     let numResults: Int
     let results: [Result]

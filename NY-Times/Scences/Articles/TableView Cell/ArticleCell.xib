@@ -8,62 +8,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArticleCell" customModule="NY_Times" customModuleProvider="target">
-            <connections>
-                <outlet property="articleDateLabel" destination="Eaw-93-hWH" id="UDC-sj-1sY"/>
-                <outlet property="articleLogoImageView" destination="ieh-hN-90j" id="wfz-kO-VKu"/>
-                <outlet property="articleSubtitleLabel" destination="R2x-0R-aQK" id="cdj-9d-ZZA"/>
-                <outlet property="articleTitleLabel" destination="MIU-0P-OWF" id="K2f-n8-DGy"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="122" id="KGk-i7-Jjw" customClass="ArticleCell" customModule="NY_Times" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="347" height="122"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="ArticleCell" customModule="NY_Times" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="349" height="115"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="347" height="122"/>
+                <rect key="frame" x="0.0" y="0.0" width="349" height="115"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.not.found" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-hN-90j">
-                        <rect key="frame" x="15" y="38.5" width="45" height="45"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.not.found" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-Od-x6n">
+                        <rect key="frame" x="15" y="35" width="45" height="45"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="45" id="a7j-Qh-Lpj"/>
-                            <constraint firstAttribute="width" constant="45" id="uLw-YJ-4G7"/>
+                            <constraint firstAttribute="width" constant="45" id="20W-NY-MyN"/>
+                            <constraint firstAttribute="height" constant="45" id="86e-kD-qmk"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rV2-pO-Jby" userLabel="Main Stack View">
-                        <rect key="frame" x="75" y="15" width="212" height="92"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IEh-eS-6sr" userLabel="Main Stack View">
+                        <rect key="frame" x="75" y="15" width="219" height="85"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uHP-et-aA8" userLabel="Titles Stack View">
-                                <rect key="frame" x="0.0" y="0.0" width="212" height="64"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xqK-8a-lpP" userLabel="Titles Stack View">
+                                <rect key="frame" x="0.0" y="0.0" width="219" height="57"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title and another title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIU-0P-OWF">
-                                        <rect key="frame" x="0.0" y="0.0" width="212" height="26.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Title and another title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvX-kU-mjc">
+                                        <rect key="frame" x="0.0" y="0.0" width="219" height="19.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" name="AppGray"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title and another title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2x-0R-aQK">
-                                        <rect key="frame" x="0.0" y="46.5" width="212" height="17.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title and another title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7w-nk-DL4">
+                                        <rect key="frame" x="0.0" y="39.5" width="219" height="17.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" name="AppGray"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ulh-x8-u1i" userLabel="Date Stack View">
-                                <rect key="frame" x="0.0" y="72" width="212" height="20"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hha-Wo-KHb" userLabel="Date Stack View">
+                                <rect key="frame" x="0.0" y="65" width="219" height="20"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IuP-Oq-veK">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eZt-6I-XXw">
                                         <rect key="frame" x="0.0" y="1" width="20" height="17.5"/>
                                         <color key="tintColor" name="AppGray"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="UXV-en-v8G"/>
-                                            <constraint firstAttribute="width" constant="20" id="zOz-dY-PRb"/>
+                                            <constraint firstAttribute="height" constant="20" id="bqc-0g-CyL"/>
+                                            <constraint firstAttribute="width" constant="20" id="hU7-sV-3Et"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title and another title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eaw-93-hWH">
-                                        <rect key="frame" x="25" y="0.0" width="187" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title and another title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6Q-fZ-abT">
+                                        <rect key="frame" x="25" y="0.0" width="194" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" name="AppGray"/>
                                         <nil key="highlightedColor"/>
@@ -72,29 +65,35 @@
                             </stackView>
                         </subviews>
                     </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lq7-ew-9P5">
-                        <rect key="frame" x="302" y="50.5" width="25" height="21.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uz5-WA-Dll">
+                        <rect key="frame" x="309" y="47" width="25" height="21.5"/>
                         <color key="tintColor" name="AppYellow"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="25" id="1Nz-lW-WT3"/>
-                            <constraint firstAttribute="height" constant="25" id="fsi-mc-mdx"/>
+                            <constraint firstAttribute="height" constant="25" id="lJh-pm-T0G"/>
+                            <constraint firstAttribute="width" constant="25" id="tCd-lh-Olw"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" name="AppBlack2"/>
                 <constraints>
-                    <constraint firstItem="ieh-hN-90j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="6gg-df-SRs"/>
-                    <constraint firstItem="lq7-ew-9P5" firstAttribute="leading" secondItem="rV2-pO-Jby" secondAttribute="trailing" constant="15" id="8qj-BM-UAE"/>
-                    <constraint firstAttribute="bottom" secondItem="rV2-pO-Jby" secondAttribute="bottom" constant="15" id="Abs-l1-1aU"/>
-                    <constraint firstItem="rV2-pO-Jby" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="cPp-Q4-qmo"/>
-                    <constraint firstItem="ieh-hN-90j" firstAttribute="centerY" secondItem="rV2-pO-Jby" secondAttribute="centerY" id="fLd-TX-gb6"/>
-                    <constraint firstAttribute="trailing" secondItem="lq7-ew-9P5" secondAttribute="trailing" constant="20" id="g1I-hU-rgX"/>
-                    <constraint firstItem="lq7-ew-9P5" firstAttribute="centerY" secondItem="rV2-pO-Jby" secondAttribute="centerY" id="mGO-2n-Wwf"/>
-                    <constraint firstItem="rV2-pO-Jby" firstAttribute="leading" secondItem="ieh-hN-90j" secondAttribute="trailing" constant="15" id="rh5-8m-5ZU"/>
+                    <constraint firstItem="hS1-Od-x6n" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="3C8-Q2-gxt"/>
+                    <constraint firstItem="IEh-eS-6sr" firstAttribute="leading" secondItem="hS1-Od-x6n" secondAttribute="trailing" constant="15" id="6QX-eX-adQ"/>
+                    <constraint firstItem="IEh-eS-6sr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="7PD-Yy-ydY"/>
+                    <constraint firstItem="hS1-Od-x6n" firstAttribute="centerY" secondItem="IEh-eS-6sr" secondAttribute="centerY" id="EkH-d5-wBe"/>
+                    <constraint firstItem="uz5-WA-Dll" firstAttribute="leading" secondItem="IEh-eS-6sr" secondAttribute="trailing" constant="15" id="Gru-4t-Rme"/>
+                    <constraint firstAttribute="bottom" secondItem="IEh-eS-6sr" secondAttribute="bottom" constant="15" id="Rdq-w8-BAx"/>
+                    <constraint firstAttribute="trailing" secondItem="uz5-WA-Dll" secondAttribute="trailing" constant="15" id="coa-Kh-X1B"/>
+                    <constraint firstItem="uz5-WA-Dll" firstAttribute="centerY" secondItem="IEh-eS-6sr" secondAttribute="centerY" id="oqG-xP-OZg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="-68.840579710144937" y="121.875"/>
+            <connections>
+                <outlet property="articleDateLabel" destination="n6Q-fZ-abT" id="BqB-dY-A0Q"/>
+                <outlet property="articleLogoImageView" destination="hS1-Od-x6n" id="Id3-RI-zov"/>
+                <outlet property="articleSubtitleLabel" destination="R7w-nk-DL4" id="3Uh-Wi-kKJ"/>
+                <outlet property="articleTitleLabel" destination="NvX-kU-mjc" id="mFz-lQ-rj1"/>
+            </connections>
+            <point key="canvasLocation" x="7.9710144927536239" y="144.30803571428569"/>
         </tableViewCell>
     </objects>
     <resources>

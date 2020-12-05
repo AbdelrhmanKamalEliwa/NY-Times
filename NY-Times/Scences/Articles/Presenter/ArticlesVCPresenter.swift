@@ -13,6 +13,7 @@ protocol ArticlesView: class {
     func showIndicator()
     func hideIndicator()
     func fetchDataSuccess()
+    func scrollToTheTop()
     func showError(error: String)
 }
 
@@ -29,6 +30,10 @@ class ArticlesVCPresenter {
     private weak var view: ArticlesView?
     private let interactor: ArticlesInteractor
     private let router: ArticlesRouter
+    private var articlesData: [Result] = []
+    private var articlesLastDay: [Result] = []
+    private var articlesLastWeek: [Result] = []
+    private var articlesLastMonth: [Result] = []
     
     // MARK: - Init
     init(view: ArticlesView?, interactor: ArticlesInteractor, router: ArticlesRouter) {
@@ -42,79 +47,78 @@ class ArticlesVCPresenter {
         fetchData()
     }
     
-    private func fetchData() {
+    private func fetchData(_ period: Int = 1) {
         
+        guard articlesLastDay.isEmpty || articlesLastWeek.isEmpty || articlesLastMonth.isEmpty
+        else {
+            self.view?.fetchDataSuccess()
+            return
+        }
+        
+        view?.showIndicator()
+        interactor.getArticles(String(period)) { [weak self] (result, error) in
+            guard let self = self else { return }
+            self.view?.hideIndicator()
+            if let error = error {
+                self.view?.showError(error: error.localizedDescription)
+            }
+            
+            guard let articles = result?.results else {
+                self.view?.showError(error: "error")
+                return
+            }
+            
+            switch period {
+            case 1:
+                self.articlesLastDay = articles
+                self.articlesData = self.articlesLastDay
+            case 7:
+                self.articlesLastWeek = articles
+                self.articlesData = self.articlesLastWeek
+            case 30:
+                self.articlesLastMonth = articles
+                self.articlesData = self.articlesLastMonth
+            default:
+                self.articlesData = articles
+            }
+            
+            self.view?.fetchDataSuccess()
+        }
     }
     
-    func setAvailableStatus(_ segmentedControlIndex: Int) {
-        view?.fetchDataSuccess()
+    func setPeriod(_ segmentedControlIndex: Int) {
+        switch segmentedControlIndex {
+        case 0:
+            fetchData(1)
+        case 1:
+            fetchData(7)
+        case 2:
+            fetchData(30)
+        default:
+            return
+        }
+        view?.scrollToTheTop()
     }
     
-//    private func setAvailableLeagues() {
-//        for league in leagues {
-//            if availableLeaguesIDs.contains(league.id) {
-//                availableLeagues.append(league)
-//            }
-//        }
-//    }
-//
-//    private func setAvailableCachedLeagues() {
-//        for league in cachedLeagues {
-//            if availableLeaguesIDs.contains(Int(league.leagueId)) {
-//                availableCachedLeagues.append(league)
-//            }
-//        }
-//    }
+    func numberOfArticles() -> Int { articlesData.count }
     
-//    func numberOfLeagues() -> Int {
-//        if available {
-//            return cach ? availableCachedLeagues.count : availableLeagues.count
-//        } else {
-//            return cach ? cachedLeagues.count : leagues.count
-//        }
-//    }
+    func cellConfiguration(_ cell: ArticlesCellView, for index: Int) {
+        
+        let article = articlesData[index]
+        cell.displayTitle(article.title ?? "")
+        cell.displaySubtitle(article.byline ?? "")
+        cell.displayDate(article.publishedDate ?? "")
+        
+        if let articleMedia = article.media, !articleMedia.isEmpty {
+            if let mediaMetadata = articleMedia[0].mediaMetadata, !articleMedia.isEmpty {
+                let imageUrl = mediaMetadata[0].url
+                cell.displayLogo(imageUrl)
+            }
+        }
+    }
     
-//    func cellConfiguration(_ cell: LeaguesCellView, for index: Int) {
-//        if cach {
-//            let league = available ? availableCachedLeagues[index] : cachedLeagues[index]
-//            cell.displayName(league.leagueName ?? "")
-//            if let areaName = league.areaName {
-//                cell.displayArea(areaName, isHidden: false)
-//            } else {
-//                cell.displayArea("", isHidden: true)
-//            }
-//            cell.displayStartDate(league.startDate ?? "")
-//            cell.displayEndDate(league.endDate ?? "")
-//            let isHidden = availableLeaguesIDs.contains(Int(league.leagueId))
-//            cell.setChevronIconStatus(isHidden: !isHidden)
-//
-//        } else {
-//            let league = available ? availableLeagues[index] : leagues[index]
-//            cell.displayName(league.name)
-//            if let shortName = league.code {
-//                cell.displayArea(shortName, isHidden: false)
-//            } else {
-//                cell.displayArea("", isHidden: true)
-//            }
-//            cell.displayStartDate(league.currentSeason?.startDate ?? "")
-//            cell.displayEndDate(league.currentSeason?.endDate ?? "")
-//            let isHidden = availableLeaguesIDs.contains(league.id)
-//            cell.setChevronIconStatus(isHidden: !isHidden)
-//        }
-//    }
-    
-//    func didSelectRow(at index: Int) {
-//        if available {
-//            let leagueId = cach ? Int(availableCachedLeagues[index].leagueId) : availableLeagues[index].id
-//            view?.navigateToLeagueDetailsScreen(with: leagueId)
-//        } else {
-//            let leagueId = cach ? Int(cachedLeagues[index].leagueId) : leagues[index].id
-//            if availableLeaguesIDs.contains(leagueId) {
-//                view?.navigateToLeagueDetailsScreen(with: leagueId)
-//            } else {
-//                view?.showError(error: "This competition is unavailable")
-//            }
-//        }
-//
-//    }
+    func didSelectRow(at index: Int) {
+        let _ = articlesData[index]
+//        view?.navigateToLeagueDetailsScreen(with: leagueId)
+    }
 }

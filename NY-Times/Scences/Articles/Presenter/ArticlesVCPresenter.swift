@@ -90,10 +90,13 @@ class ArticlesVCPresenter {
         switch segmentedControlIndex {
         case 0:
             fetchData(1)
+            articlesData = articlesLastDay
         case 1:
             fetchData(7)
+            articlesData = articlesLastWeek
         case 2:
             fetchData(30)
+            articlesData = articlesLastMonth
         default:
             return
         }

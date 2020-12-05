@@ -121,7 +121,7 @@ class ArticlesVCPresenter {
     }
     
     func didSelectRow(at index: Int) {
-        let _ = articlesData[index]
-//        view?.navigateToLeagueDetailsScreen(with: leagueId)
+        let articleData = articlesData[index]
+        router.navigateToArticleDetailsScreen(from: view, articleData: articleData)
     }
 }

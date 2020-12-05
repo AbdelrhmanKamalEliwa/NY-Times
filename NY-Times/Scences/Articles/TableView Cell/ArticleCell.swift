@@ -22,19 +22,9 @@ class ArticleCell: UITableViewCell {
         // Initialization code
         setupCellUI()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     // MARK: - Methods
     func setupCellUI() {
-//        articleLogoImageView.image = UIImage(named: "logo.not.found")
-//        articleTitleLabel.text = "logo.not.found"
-//        articleSubtitleLabel.text = "logo.not.found"
-//        articleDateLabel.text = "logo.not.found"
         articleLogoImageView.cornerRadius = articleLogoImageView.frame.height / 2
     }
 }

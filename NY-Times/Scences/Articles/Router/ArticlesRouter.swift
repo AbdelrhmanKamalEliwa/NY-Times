@@ -17,10 +17,10 @@ class ArticlesRouter {
         return articlesVC
     }
     
-//    func navigateToArticleDetailsScreen(from view: HomeView?, itemData: ItemModel, favorites: [String]?) {
-//        let itemDetailsView = ItemDetailsRouter.createItemDetailsVC(favorites, itemData: itemData)
-//        if let viewController = view as? UIViewController {
-//            viewController.navigationController?.pushViewController(itemDetailsView, animated: true)
-//        }
-//    }
+    func navigateToArticleDetailsScreen(from view: ArticlesView?, articleData: Result) {
+        let articleDetailsView = ArticleDetailsRouter.createArticleDetailsVC(articleData)
+        if let viewController = view as? UIViewController {
+            viewController.navigationController?.pushViewController(articleDetailsView, animated: true)
+        }
+    }
 }

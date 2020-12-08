@@ -41,7 +41,7 @@ extension ArticleDetailsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        presenter?.numberOfSections() ?? 0
+        presenter?.numberOfSections() ?? 0 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

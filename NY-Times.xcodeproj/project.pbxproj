@@ -27,6 +27,7 @@
 		F4887168257C09FD0029346D /* ArticleDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4887167257C09FD0029346D /* ArticleDetailsRouter.swift */; };
 		F4887171257C0CBF0029346D /* ArticleDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4887170257C0CBF0029346D /* ArticleDetails.swift */; };
 		F4AB07D7258640890030A368 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB07D6258640890030A368 /* UIImageView+Extension.swift */; };
+		F4AB07E3258648820030A368 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F4AB07E2258648820030A368 /* .swiftlint.yml */; };
 		F4C8D174257A926700AACA0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C8D173257A926700AACA0C /* AppDelegate.swift */; };
 		F4C8D17D257A926900AACA0C /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C8D17C257A926900AACA0C /* Icons.xcassets */; };
 		F4C8D180257A926900AACA0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C8D17E257A926900AACA0C /* LaunchScreen.storyboard */; };
@@ -87,6 +88,7 @@
 		F4887167257C09FD0029346D /* ArticleDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsRouter.swift; sourceTree = "<group>"; };
 		F4887170257C0CBF0029346D /* ArticleDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetails.swift; sourceTree = "<group>"; };
 		F4AB07D6258640890030A368 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		F4AB07E2258648820030A368 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F4C8D170257A926700AACA0C /* NY-Times.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NY-Times.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C8D173257A926700AACA0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4C8D17C257A926900AACA0C /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		F4C8D167257A926700AACA0C = {
 			isa = PBXGroup;
 			children = (
+				F4AB07E2258648820030A368 /* .swiftlint.yml */,
 				F4C8D172257A926700AACA0C /* NY-Times */,
 				F4C8D189257A926900AACA0C /* NY-TimesTests */,
 				F4C8D194257A926900AACA0C /* NY-TimesUITests */,
@@ -454,6 +457,7 @@
 			buildPhases = (
 				98223E8BF3D103D86310A8EC /* [CP] Check Pods Manifest.lock */,
 				F4C8D16C257A926700AACA0C /* Sources */,
+				F4AB07E12586485E0030A368 /* SwiftLint */,
 				F4C8D16D257A926700AACA0C /* Frameworks */,
 				F4C8D16E257A926700AACA0C /* Resources */,
 				DC9C345F06A1968369B1946D /* [CP] Embed Pods Frameworks */,
@@ -553,6 +557,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4AB07E3258648820030A368 /* .swiftlint.yml in Resources */,
 				F4C8D180257A926900AACA0C /* LaunchScreen.storyboard in Resources */,
 				F488714F257C08230029346D /* ArticleDetailsCell.xib in Resources */,
 				F4C8D1CA257A960B00AACA0C /* Colors.xcassets in Resources */,
@@ -662,6 +667,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NY-Times/Pods-NY-Times-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F4AB07E12586485E0030A368 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		FC8BA09B5E2D7B9B90116947 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

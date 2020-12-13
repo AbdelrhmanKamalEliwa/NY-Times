@@ -9,17 +9,17 @@ import UIKit
 
 // MARK: - NavBarTitleProtocol
 protocol NavBarProtocol: UIViewController {
-    var navBarTitle: AppScreens { set get }
+    var navBarTitle: AppScreens { get set }
     func setupNavBar(navBarTitle: AppScreens)
 }
 
 extension NavBarProtocol {
-    //MARK: Properties
+    // MARK: Properties
     var navBar: UINavigationBar {
         return self.navigationController!.navigationBar
     }
     
-    //MARK: Setup NavBar
+    // MARK: Setup NavBar
     func setupNavBar(navBarTitle: AppScreens) {
         navBar.barTintColor = UIColor(named: "AppYellow")!
         navBar.tintColor = UIColor(named: "AppBlack1")

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArticleDetailsVC" customModule="NY_Times" customModuleProvider="target">
             <connections>
+                <outlet property="mediaImageView" destination="eUt-d9-jso" id="X5N-Ni-aMJ"/>
                 <outlet property="tableView" destination="1ua-p9-zPl" id="jlH-bb-6Dm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,20 +20,29 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eUt-d9-jso">
+                    <rect key="frame" x="117" y="64" width="180" height="180"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="180" id="bZE-Pg-Tr2"/>
+                        <constraint firstAttribute="height" constant="180" id="x30-y9-AnD"/>
+                    </constraints>
+                </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="1ua-p9-zPl">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <rect key="frame" x="0.0" y="264" width="414" height="632"/>
                     <color key="backgroundColor" name="AppBlack1"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="AppBlack1"/>
             <constraints>
-                <constraint firstItem="1ua-p9-zPl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="b9l-vh-d8Y"/>
+                <constraint firstItem="eUt-d9-jso" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="4R6-Bf-SCM"/>
+                <constraint firstItem="1ua-p9-zPl" firstAttribute="top" secondItem="eUt-d9-jso" secondAttribute="bottom" constant="20" id="EEw-ik-IUP"/>
                 <constraint firstAttribute="bottom" secondItem="1ua-p9-zPl" secondAttribute="bottom" id="hz1-5T-1Gs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1ua-p9-zPl" secondAttribute="trailing" id="iQh-aT-FzM"/>
                 <constraint firstItem="1ua-p9-zPl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pAJ-NU-URd"/>
+                <constraint firstItem="eUt-d9-jso" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="u75-JF-ecL"/>
             </constraints>
-            <point key="canvasLocation" x="-39" y="115"/>
+            <point key="canvasLocation" x="-39.130434782608695" y="114.50892857142857"/>
         </view>
     </objects>
     <resources>

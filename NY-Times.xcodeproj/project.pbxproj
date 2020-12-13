@@ -23,11 +23,10 @@
 		F4887144257C049A0029346D /* ArticleDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4887142257C049A0029346D /* ArticleDetailsVC.xib */; };
 		F488714E257C08230029346D /* ArticleDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F488714C257C08230029346D /* ArticleDetailsCell.swift */; };
 		F488714F257C08230029346D /* ArticleDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F488714D257C08230029346D /* ArticleDetailsCell.xib */; };
-		F488715A257C08CA0029346D /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4887158257C08CA0029346D /* MediaCell.swift */; };
-		F488715B257C08CA0029346D /* MediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4887159257C08CA0029346D /* MediaCell.xib */; };
 		F4887163257C09E40029346D /* ArticleDetailsVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4887162257C09E40029346D /* ArticleDetailsVCPresenter.swift */; };
 		F4887168257C09FD0029346D /* ArticleDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4887167257C09FD0029346D /* ArticleDetailsRouter.swift */; };
 		F4887171257C0CBF0029346D /* ArticleDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4887170257C0CBF0029346D /* ArticleDetails.swift */; };
+		F4AB07D7258640890030A368 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AB07D6258640890030A368 /* UIImageView+Extension.swift */; };
 		F4C8D174257A926700AACA0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C8D173257A926700AACA0C /* AppDelegate.swift */; };
 		F4C8D17D257A926900AACA0C /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C8D17C257A926900AACA0C /* Icons.xcassets */; };
 		F4C8D180257A926900AACA0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C8D17E257A926900AACA0C /* LaunchScreen.storyboard */; };
@@ -84,11 +83,10 @@
 		F4887142257C049A0029346D /* ArticleDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleDetailsVC.xib; sourceTree = "<group>"; };
 		F488714C257C08230029346D /* ArticleDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsCell.swift; sourceTree = "<group>"; };
 		F488714D257C08230029346D /* ArticleDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleDetailsCell.xib; sourceTree = "<group>"; };
-		F4887158257C08CA0029346D /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
-		F4887159257C08CA0029346D /* MediaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCell.xib; sourceTree = "<group>"; };
 		F4887162257C09E40029346D /* ArticleDetailsVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsVCPresenter.swift; sourceTree = "<group>"; };
 		F4887167257C09FD0029346D /* ArticleDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsRouter.swift; sourceTree = "<group>"; };
 		F4887170257C0CBF0029346D /* ArticleDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetails.swift; sourceTree = "<group>"; };
+		F4AB07D6258640890030A368 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F4C8D170257A926700AACA0C /* NY-Times.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NY-Times.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C8D173257A926700AACA0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4C8D17C257A926900AACA0C /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -218,28 +216,10 @@
 		F488714B257C07FC0029346D /* TableView Cell */ = {
 			isa = PBXGroup;
 			children = (
-				F4887156257C087A0029346D /* Article Details Cell */,
-				F4887157257C088F0029346D /* Media Cell */,
-			);
-			path = "TableView Cell";
-			sourceTree = "<group>";
-		};
-		F4887156257C087A0029346D /* Article Details Cell */ = {
-			isa = PBXGroup;
-			children = (
 				F488714C257C08230029346D /* ArticleDetailsCell.swift */,
 				F488714D257C08230029346D /* ArticleDetailsCell.xib */,
 			);
-			path = "Article Details Cell";
-			sourceTree = "<group>";
-		};
-		F4887157257C088F0029346D /* Media Cell */ = {
-			isa = PBXGroup;
-			children = (
-				F4887158257C08CA0029346D /* MediaCell.swift */,
-				F4887159257C08CA0029346D /* MediaCell.xib */,
-			);
-			path = "Media Cell";
+			path = "TableView Cell";
 			sourceTree = "<group>";
 		};
 		F4C8D167257A926700AACA0C = {
@@ -344,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				F4C8D20C257AA37900AACA0C /* UIView+Extension.swift */,
+				F4AB07D6258640890030A368 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -369,8 +350,8 @@
 		F4C8D1C5257A95E400AACA0C /* Scences */ = {
 			isa = PBXGroup;
 			children = (
-				F488713C257BEC7A0029346D /* Articcle Details */,
 				F4C8D1DC257A975200AACA0C /* Articles */,
+				F488713C257BEC7A0029346D /* Articcle Details */,
 			);
 			path = Scences;
 			sourceTree = "<group>";
@@ -578,7 +559,6 @@
 				F4C8D17D257A926900AACA0C /* Icons.xcassets in Resources */,
 				F4887132257BE0710029346D /* ArticleCell.xib in Resources */,
 				F4887144257C049A0029346D /* ArticleDetailsVC.xib in Resources */,
-				F488715B257C08CA0029346D /* MediaCell.xib in Resources */,
 				F4C8D1E4257A979700AACA0C /* ArticlesVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,9 +691,9 @@
 				F4887171257C0CBF0029346D /* ArticleDetails.swift in Sources */,
 				F4C8D1ED257A9E9500AACA0C /* NetworkManager.swift in Sources */,
 				F4887168257C09FD0029346D /* ArticleDetailsRouter.swift in Sources */,
+				F4AB07D7258640890030A368 /* UIImageView+Extension.swift in Sources */,
 				F4C8D203257A9EF200AACA0C /* EndPointRouter.swift in Sources */,
 				F4800EBF257AB6CB0001D92C /* BaseWireframe.swift in Sources */,
-				F488715A257C08CA0029346D /* MediaCell.swift in Sources */,
 				F4800EB7257AB4930001D92C /* ArticlesRouter.swift in Sources */,
 				F4800ECE257AB7D60001D92C /* NavBarProtocol.swift in Sources */,
 				F4800ED8257ABD700001D92C /* ArticlesModel.swift in Sources */,

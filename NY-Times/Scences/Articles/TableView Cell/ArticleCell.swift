@@ -44,23 +44,6 @@ extension ArticleCell: ArticlesCellView {
     }
     
     func displayLogo(_ imageUrl: String?) {
-        if let imageUrl = imageUrl {
-            guard let url = URL(string: imageUrl) else { return }
-            articleLogoImageView.kf.indicatorType = .activity
-            articleLogoImageView.kf.setImage(
-                with: url, placeholder: nil, options: nil,
-                progressBlock: nil) { [weak self] (result) in
-                guard let self = self else { return }
-                switch result {
-                case .success(let image):
-                    self.articleLogoImageView.image = image.image
-                case .failure:
-                    self.articleLogoImageView.image = UIImage(named: "logo.not.found")?.imageFlippedForRightToLeftLayoutDirection()
-                    return
-                }
-            }
-        } else {
-            self.articleLogoImageView.image = UIImage(named: "logo.not.found")?.imageFlippedForRightToLeftLayoutDirection()
-        }
+        articleLogoImageView.setImageUrl(imageUrl)
     }
 }

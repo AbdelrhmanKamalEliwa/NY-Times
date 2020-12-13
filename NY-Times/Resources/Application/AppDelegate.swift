@@ -11,13 +11,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
         window = UIWindow(frame: UIScreen.main.bounds)
-        let mainVC = ArticlesVC(navBarTitle: .ArticleDetails)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = createFirstScreen()
+        return true
+    }
+    
+    private func createFirstScreen() -> UINavigationController {
+        let mainVC = ArticlesVC(navBarTitle: .Articles)
         let interactor = ArticlesInteractor()
         let router = ArticlesRouter()
         mainVC.presenter = ArticlesVCPresenter(
@@ -25,9 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             interactor: interactor,
             router: router)
         let mainNC = UINavigationController(rootViewController: mainVC)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = mainNC
-        return true
+        return mainNC
     }
 
     // MARK: - UISceneSession Lifecycle

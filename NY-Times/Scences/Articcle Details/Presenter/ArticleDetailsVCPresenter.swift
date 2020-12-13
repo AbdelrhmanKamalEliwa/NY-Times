@@ -10,6 +10,7 @@ import Foundation
 // MARK: - ArticleDetailsView Protocol
 protocol ArticleDetialsView: class {
     var presenter: ArticleDetailsVCPresenter? { get set }
+    func setMedia(imageUrl: String)
 }
 
 // MARK: - ArticleDetailsCellView Protocol
@@ -37,6 +38,18 @@ class ArticleDetailsVCPresenter {
     }
     
     // MARK: - Methods
+    func viewDidLoad() {
+        setImage()
+    }
+    
+    private func setImage() {
+        if let articleMedia = articleData.media, !articleMedia.isEmpty {
+            if let mediaMetadata = articleMedia[0].mediaMetadata, !articleMedia.isEmpty {
+                view?.setMedia(imageUrl: mediaMetadata[2].url)
+            }
+        }
+    }
+    
     func numberOfSections() -> Int { titlesData.count }
     
     func numberOfRowInSection() -> Int { 1 }
@@ -55,15 +68,6 @@ class ArticleDetailsVCPresenter {
             cell.displayContent(articleData.byline ?? "None")
         default:
             return
-        }
-    }
-    
-    func mediaCellConfiguration(_ cell: MediaCellView, for section: Int, for index: Int) {
-        guard section == 3 else { return }
-        if let articleMedia = articleData.media, !articleMedia.isEmpty {
-            if let mediaMetadata = articleMedia[0].mediaMetadata, !articleMedia.isEmpty {
-                cell.displayLogo(mediaMetadata[index].url)
-            }
         }
     }
 }

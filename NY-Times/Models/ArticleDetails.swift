@@ -8,5 +8,5 @@
 import Foundation
 
 class ArticleDetails {
-    let data = ["Title", "Abstract", "Byline", "Media"]
+    let data = ["Title", "Abstract", "Byline"]
 }
